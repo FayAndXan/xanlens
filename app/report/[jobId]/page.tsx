@@ -10,7 +10,7 @@ async function getAuditResult(jobId: string) {
       ? `https://${process.env.VERCEL_URL}`
       : process.env.NEXT_PUBLIC_BASE_URL || "https://xanlens.com";
     const res = await fetch(`${baseUrl}/api/v1/audit/status?jobId=${jobId}`, {
-      next: { revalidate: 60 },
+      next: { revalidate: 86400 },
     });
     if (!res.ok) return null;
     const data = await res.json();

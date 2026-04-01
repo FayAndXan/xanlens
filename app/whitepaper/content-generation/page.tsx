@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 export default function Page() {
   const types = [
     { name: "Blog Post", desc: "Long-form, GEO-optimized article with natural keyword integration, FAQ sections, and citation-worthy structure that AI engines prefer to reference." },

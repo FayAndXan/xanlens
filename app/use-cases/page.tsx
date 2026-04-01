@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 "use client";
 
 import { motion } from "framer-motion";

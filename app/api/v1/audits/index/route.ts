@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "edge";
-export const revalidate = 300; // cache 5 min
+export const revalidate = 86400; // cache 24h
 
 const KV_URL = process.env.KV_REST_API_URL || "";
 const KV_TOKEN = process.env.KV_REST_API_TOKEN || "";
@@ -91,7 +91,7 @@ export async function GET(req: NextRequest) {
       updated: new Date().toISOString(),
     }, {
       headers: {
-        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
+        "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=172800",
       },
     });
   } catch (e: any) {

@@ -1,16 +1,3 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "xanlens.xyz" }],
-      "destination": "https://xanlens.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.xanlens.xyz" }],
-      "destination": "https://xanlens.com/:path*",
-      "permanent": true
-    }
-  ]
+  "redirects": []
 }

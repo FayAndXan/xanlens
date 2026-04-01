@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { redisGet } from "@/app/lib/redis";
 import FixesClient from "./FixesClient";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 interface PageProps {
   params: Promise<{ jobId: string }>;

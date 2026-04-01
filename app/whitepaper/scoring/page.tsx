@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 export default function Page() {
   const grades = [
     { range: "80–100", grade: "A", label: "Highly visible — AI engines actively recommend you" },
