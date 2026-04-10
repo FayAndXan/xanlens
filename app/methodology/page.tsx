@@ -141,6 +141,7 @@ export default function Methodology() {
               { name: "DeepSeek", status: "Live" },
               { name: "ChatGPT", status: "Coming Soon" },
               { name: "Claude", status: "Coming Soon" },
+              { name: "Mistral", status: "Live" },
               { name: "Perplexity", status: "Coming Soon" },
               { name: "Meta AI", status: "Coming Soon" },
             ].map((engine) => (

@@ -95,6 +95,12 @@ export const ENGINES: Record<string, EngineConfig> = {
   },
   llama: { ...nvidiaConfig("meta/llama-4-maverick-17b-128e-instruct", "Llama"), unavailable: true }, // Paused — conserving NVIDIA credits
   qwen: { ...nvidiaConfig("qwen/qwen3-next-80b-a3b-instruct", "Qwen"), unavailable: true }, // Paused — conserving NVIDIA credits
+  mistral: {
+    url: "https://api.mistral.ai/v1/chat/completions",
+    makeHeaders: () => ({ Authorization: `Bearer ${process.env.MISTRAL_API_KEY || ""}` }),
+    makeBody: (prompt) => ({ model: "mistral-large-latest", messages: [{ role: "user", content: prompt }], max_tokens: 1024, temperature: 0.7 }),
+    parseResponse: (d) => d?.choices?.[0]?.message?.content || "",
+  },
   perplexity: {
     url: "https://api.perplexity.ai/chat/completions",
     makeHeaders: () => ({ Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY || ""}` }),
